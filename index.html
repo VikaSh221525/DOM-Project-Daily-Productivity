@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>DOM PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <nav>
+
+        </nav>
+        <section class="allelems">
+            <div class="todo elem" id="0">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1514782831304-632d84503f6f?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <h2>ToDo List</h2>
+            </div>
+            <div class="dailyplanner elem" id="1">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1640966087898-2b45efa3aab7?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <h2>Daily <br> planner</h2>
+            </div>
+            <div class="motivation elem" id="2">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1534196511436-921a4e99f297?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <h2>Motivational <br> Quotes</h2>
+            </div>
+            <div class="timer elem" id="3">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1594560562525-c691e827ca01?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <h2>Pomodoro <br> Timer</h2>
+            </div>
+            <div class="progress elem" id="4">
+                <div class="image">
+                    <img src="https://plus.unsplash.com/premium_photo-1683141123111-c445910abc29?q=80&w=2139&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <h2>Progress</h2>
+            </div>
+            
+        </section>
+
+        <section class="fullelem todo-list-fullpage">
+            <div class="headingbtn">
+                <h1>Your Personalised Task List</h1>
+                <button class="back" id="0"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="todocontainer">
+                <div class="addtask">
+                    <form >
+                        <input type="text" placeholder="Enter Task" id="Enteredtext">
+                        <textarea placeholder="Enter Details" oninput="autoResizeLimit(this)"></textarea>
+                        <div class="important">
+                            <input type="checkbox" id="imptask" name="imptask">
+                            <label for="imptask" id="impheading">Mark As Important!</label>
+                        </div>
+                        <button class="addtaskbtn">Add Task</button>
+                    </form>
+                </div>
+                <div class="alltask">
+                    
+                </div>
+            </div>
+        </section>
+        <section class="fullelem daily-planner-fullpage">
+            <div class="headingbtn">
+                <h1>Daily Planner</h1>
+                <button class="back" id="1"><i class="ri-close-line"></i></button>
+            </div>
+        </section>
+        <section class="fullelem motivational-fullpafe">
+            <div class="headingbtn">
+                <h1>Motivational Quotes</h1>
+                <button class="back" id="2"><i class="ri-close-line"></i></button>
+            </div>
+        </section>
+        <section class="fullelem Pomodoro-fullpage">
+            <div class="headingbtn">
+                <h1>Pomodoro Timer</h1>
+                <button class="back" id="3"><i class="ri-close-line"></i></button>
+            </div>
+        </section>
+        <section class="fullelem">
+            <div class="headingbtn">
+                <h1>progress Visualization</h1>
+                <button class="back" id="4"><i class="ri-close-line"></i></button>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="brain.js"></script>
+</body>
+</html>

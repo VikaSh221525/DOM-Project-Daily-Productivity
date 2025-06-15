@@ -1,0 +1,265 @@
+$pri: #604652;
+$sec: #735557;
+$tri: #97866A;
+$tri2: #D29F80;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    color: $tri2;
+    font-family: "Outfit";
+
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background: $sec;
+
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 4rem;
+        background-color: #604652;
+    }
+
+    .allelems {
+        height: 100%;
+        width: 100%;
+        padding: 5rem 2.5rem 2.5rem 2.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: absolute;
+
+        .elem {
+            background-color: #604652;
+            border-radius: 10px;
+            height: 18rem;
+            width: 15rem;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease-in-out;
+
+            .image {
+                width: 100%;
+                height: 100%;
+
+                // border-radius: 10px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    // border-radius: 10px;
+                }
+            }
+
+            h2 {
+                position: absolute;
+                color: white;
+                bottom: 4%;
+                right: 5%;
+                font-size: 1.9rem;
+
+            }
+        }
+
+        .elem:active {
+            scale: 0.98;
+        }
+    }
+
+    .fullelem {
+        height: 100%;
+        width: 100%;
+        background-color: $pri;
+        padding: 2rem 2rem;
+        font-size: 2.5rem;
+        display: none;
+        position: absolute;
+
+        .headingbtn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .back {
+                padding: 0.6rem;
+                border-radius: 50%;
+                border: none;
+                font-size: 1.8rem;
+                background-color: red;
+                color: white;
+                transition: all 0.5 ease;
+                cursor: pointer;
+            }
+
+            .back:active {
+                scale: 0.98;
+            }
+        }
+    }
+
+    .todo-list-fullpage {
+        // display: block;
+        .todocontainer {
+            height: 80%;
+            width: 100%;
+            // background-color: $sec;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+
+            .addtask {
+                width: 30%;
+                height: 100%;
+                background-color: $sec;
+                border-radius: 20px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    padding: 1.5rem 1rem 0 1rem;
+
+                    #Enteredtext {
+                        width: 100%;
+                        padding: 0.7rem 0.9rem;
+                        font-size: large;
+                        background-color: $pri;
+                        color: white;
+                        border-radius: 10px;
+                        border: none;
+                        outline: none;
+                    }
+
+                    textarea {
+                        width: 100%;
+                        padding: 0.7rem 0.9rem;
+                        font-size: large;
+                        background-color: $pri;
+                        color: white;
+                        border-radius: 10px;
+                        border: none;
+                        outline: none;
+                        resize: none;
+                        overflow-y: auto;
+                        min-height: 100px;
+                        max-height: 200px;
+                    }
+
+                    textarea::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .important {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 20px;
+                        margin-left: 10px;
+
+                        #imptask {
+                            scale: 2;
+                        }
+
+                        #impheading {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .addtaskbtn {
+                        width: 100%;
+                        padding: 0.7rem 0.9rem;
+                        font-size: large;
+                        background-color: $pri;
+                        color: white;
+                    }
+                }
+            }
+
+            .alltask {
+                width: 68%;
+                height: 100%;
+                background-color: $sec;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.7rem 0.9rem;
+                overflow: auto;
+
+                .task {
+                    background-color: #604652;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 0.7rem 0.9rem;
+                    border-radius: 10px;
+                    margin-bottom: 0.8rem;
+
+                    details {
+                        summary {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            &::before {
+                                content: '▶';
+                                display: inline-block;
+                                transform: rotate(0deg);
+                                transition: transform 0.2s;
+                            }
+
+                            span {
+                                color: white;
+                                background-color: red;
+                                padding: 2px 4px;
+                                font-size: small;
+                                border-radius: 10px;
+                            }
+
+                            span.true {
+                                opacity: 1;
+                            }
+
+                            span.false {
+                                opacity: 0;
+                            }
+                        }
+
+                        pre{
+                            padding-top: 10px;
+                            padding-left: 10px;
+                            font-size: medium;
+                            
+                        }
+
+                        &[open] summary::before {
+                            transform: rotate(90deg);
+                            /* 90 for right-arrow to down */
+                        }
+                    }
+
+                    .taskcompletebtn {
+                        padding: 0.5rem 0.7rem;
+                        background-color: rgb(42, 217, 42);
+                        border: none;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

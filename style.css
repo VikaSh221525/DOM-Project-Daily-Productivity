@@ -1,0 +1,219 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  color: #D29F80;
+  font-family: "Outfit";
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background: #735557;
+}
+main nav {
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  background-color: #604652;
+}
+main .allelems {
+  height: 100%;
+  width: 100%;
+  padding: 5rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+}
+main .allelems .elem {
+  background-color: #604652;
+  border-radius: 10px;
+  height: 18rem;
+  width: 15rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+main .allelems .elem .image {
+  width: 100%;
+  height: 100%;
+}
+main .allelems .elem .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .allelems .elem h2 {
+  position: absolute;
+  color: white;
+  bottom: 4%;
+  right: 5%;
+  font-size: 1.9rem;
+}
+main .allelems .elem:active {
+  scale: 0.98;
+}
+main .fullelem {
+  height: 100%;
+  width: 100%;
+  background-color: #604652;
+  padding: 2rem 2rem;
+  font-size: 2.5rem;
+  display: none;
+  position: absolute;
+}
+main .fullelem .headingbtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .fullelem .headingbtn .back {
+  padding: 0.6rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.8rem;
+  background-color: red;
+  color: white;
+  transition: all 0.5 ease;
+  cursor: pointer;
+}
+main .fullelem .headingbtn .back:active {
+  scale: 0.98;
+}
+main .todo-list-fullpage .todocontainer {
+  height: 80%;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+main .todo-list-fullpage .todocontainer .addtask {
+  width: 30%;
+  height: 100%;
+  background-color: #735557;
+  border-radius: 20px;
+}
+main .todo-list-fullpage .todocontainer .addtask form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1rem 0 1rem;
+}
+main .todo-list-fullpage .todocontainer .addtask form #Enteredtext {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: large;
+  background-color: #604652;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+main .todo-list-fullpage .todocontainer .addtask form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: large;
+  background-color: #604652;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  min-height: 100px;
+  max-height: 200px;
+}
+main .todo-list-fullpage .todocontainer .addtask form textarea::-webkit-scrollbar {
+  display: none;
+}
+main .todo-list-fullpage .todocontainer .addtask form .important {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-left: 10px;
+}
+main .todo-list-fullpage .todocontainer .addtask form .important #imptask {
+  scale: 2;
+}
+main .todo-list-fullpage .todocontainer .addtask form .important #impheading {
+  font-size: 1.5rem;
+}
+main .todo-list-fullpage .todocontainer .addtask form .addtaskbtn {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: large;
+  background-color: #604652;
+  color: white;
+}
+main .todo-list-fullpage .todocontainer .alltask {
+  width: 68%;
+  height: 100%;
+  background-color: #735557;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.7rem 0.9rem;
+  overflow: auto;
+}
+main .todo-list-fullpage .todocontainer .alltask .task {
+  background-color: #604652;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details summary::before {
+  content: "▶";
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details summary span {
+  color: white;
+  background-color: red;
+  padding: 2px 4px;
+  font-size: small;
+  border-radius: 10px;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details summary span.true {
+  opacity: 1;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details summary span.false {
+  opacity: 0;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details pre {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: medium;
+}
+main .todo-list-fullpage .todocontainer .alltask .task details[open] summary::before {
+  transform: rotate(90deg);
+  /* 90 for right-arrow to down */
+}
+main .todo-list-fullpage .todocontainer .alltask .task .taskcompletebtn {
+  padding: 0.5rem 0.7rem;
+  background-color: rgb(42, 217, 42);
+  border: none;
+  font-weight: 600;
+}
