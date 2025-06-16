@@ -78,10 +78,38 @@ function Todo() {
             imp: taskimpcheck.checked,
         })
         rendertask();
-        taskinput .value= "";
-        taskdetails.value="";
-        taskimpcheck.checked=false;
+        taskinput.value = "";
+        taskdetails.value = "";
+        taskimpcheck.checked = false;
 
     })
 }
 Todo();
+
+// async function getquote(){
+//     let response = await fetch(`http://api.quotable.io/random`)
+//     let data = await response.json();
+//     console.log(data);
+
+// }
+// getquote();
+
+function motivationalquotes() {
+    let motivationalquote = document.querySelector(".M-quote p");
+    let motivationalauthor = document.querySelector(".M-writer p")
+
+    function getquote() {
+        return fetch(`http://api.quotable.io/random`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                motivationalauthor.innerHTML = `~${res.author}`;
+                motivationalquote.innerHTML = res.content;
+            }).catch(err => {
+                alert("Failed to fetch quote")
+
+            })
+    }
+    getquote();
+}
+motivationalquotes();
