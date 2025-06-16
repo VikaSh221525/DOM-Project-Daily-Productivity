@@ -6,7 +6,7 @@
   justify-content: center;
 }
 .motivational-fullpage .motivation-container .M-content {
-  width: 30%;
+  width: 60%;
   height: 70%;
   background-color: #D29F80;
   border-radius: 30px;
@@ -59,6 +59,46 @@
   scale: 1.1;
   z-index: 8;
   border-radius: 30px;
+}
+
+.Pomodoro-fullpage {
+  position: relative;
+}
+.Pomodoro-fullpage #session {
+  font-size: 1.8rem;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, 0);
+  background-color: rgb(9, 138, 84);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 20px;
+}
+.Pomodoro-fullpage .pomo-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.Pomodoro-fullpage .pomo-timer h5 {
+  font-size: 7.5rem;
+}
+.Pomodoro-fullpage .pomo-timer button {
+  background-color: #735557;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  margin: 10px;
+  border: none;
+  transition: all 0.1s ease;
+  box-shadow: 5px 5px 5px 0 black;
+  font-weight: 600;
+}
+.Pomodoro-fullpage .pomo-timer button:active {
+  box-shadow: none;
+  scale: 0.97;
 }
 
 * {
