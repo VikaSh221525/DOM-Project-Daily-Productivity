@@ -202,3 +202,65 @@ function pomodorotimer() {
     reset.addEventListener("click", resettimer);
 }
 pomodorotimer();
+
+let apikey = "87cff9a0a2d54002b26105740251706";
+let city = "Delhi";
+let country = "IN";
+
+let daytime = document.querySelector(".header1 h1");
+let citycountry = document.querySelector(".header1 h4");
+let daydate = document.querySelector(".header1 h2")
+
+let temperature = document.querySelector(".header2 #temp");
+let precipitation = document.querySelector(".header2 #prep");
+let humidity = document.querySelector(".header2 #humi");
+let windspeed = document.querySelector(".header2 #speed");
+let windreport = document.querySelector(".header2 #report");
+
+let changeimg = document.querySelector("header");
+
+
+
+let date = null;
+function timedate(){
+    date = new Date();
+    const dayname = date.toLocaleDateString('en-IN', { weekday: 'long' });
+    const timestring = date.toLocaleTimeString('en-IN',{hour: 'numeric', minute: 'numeric', hour12: true});
+    daytime.innerHTML = `${dayname}, ${String(timestring).padStart(2,'0')}`
+
+    const month = date.toLocaleString('default', {month:'long'})
+    daydate.innerHTML = `${date.getDate()} ${month}, ${date.getFullYear()}`
+    
+    const hour = date.getHours();
+    let imageurl='';
+    if(hour>=6 && hour<12){
+        imageurl = 'url("https://plus.unsplash.com/premium_photo-1672234253746-99ac19181f0b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2t5fGVufDB8MHwwfHx8MA%3D%3D")'
+    }
+    else if(hour>=12 && hour<19){
+        imageurl = 'url("https://images.unsplash.com/photo-1691432922406-a9a808903b78?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
+    }
+    else{
+        imageurl = 'url("https://images.unsplash.com/photo-1665708469600-bcae2554560c?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
+    }
+    changeimg.style.backgroundImage = imageurl;
+}
+
+
+async function wheatherapicall(){
+    let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city},${country}`);
+    let data = await response.json();
+    console.log(data);
+    
+    console.log(data.current.temp_c);
+    citycountry.innerHTML = `${data.location.region}, ${data.location.country}`
+    temperature.innerHTML = `${data.current.temp_c}°C`
+    precipitation.innerHTML = `Precipitation: ${data.current.precip_in}%`
+    humidity.innerHTML = `Humidity: ${data.current.humidity}%`
+    windspeed.innerHTML = `wind: ${data.current.wind_kph} kph`
+    windreport.innerHTML = `${data.current.condition.text} `
+}
+setInterval(()=>{
+    wheatherapicall();
+    timedate();
+},1000)
+

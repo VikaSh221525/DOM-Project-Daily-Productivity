@@ -129,14 +129,48 @@ main nav {
 main .allelems {
   height: 100%;
   width: 100%;
-  padding: 5rem 2.5rem 2.5rem 2.5rem;
+  padding: 3.2rem 2rem 0rem 2rem;
+  position: absolute;
+  overflow: auto;
+}
+main .allelems header {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+main .allelems header .header1 {
+  margin-bottom: 2rem;
+}
+main .allelems header .header1 h2 {
+  font-size: 1.7rem;
+}
+main .allelems header .header1 h1 {
+  font-size: 4rem;
+}
+main .allelems header .header1 h4 {
+  font-size: 2rem;
+}
+main .allelems header .header2 h2 {
+  font-size: 3rem;
+}
+main .allelems header .header2 #report {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+main .allelems .allfeatures {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  position: absolute;
 }
-main .allelems .elem {
+main .allelems .allfeatures .elem {
   background-color: #604652;
   border-radius: 10px;
   height: 18rem;
@@ -145,24 +179,24 @@ main .allelems .elem {
   position: relative;
   transition: all 0.4s ease-in-out;
 }
-main .allelems .elem .image {
+main .allelems .allfeatures .elem .image {
   width: 100%;
   height: 100%;
 }
-main .allelems .elem .image img {
+main .allelems .allfeatures .elem .image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .allelems .elem h2 {
+main .allelems .allfeatures .elem h2 {
   position: absolute;
   color: white;
   bottom: 4%;
   right: 5%;
   font-size: 1.9rem;
 }
-main .allelems .elem:active {
+main .allelems .allfeatures .elem:active {
   scale: 0.98;
 }
 main .fullelem {
